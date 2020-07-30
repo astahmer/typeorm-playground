@@ -5,7 +5,7 @@ services:
         build:
             context: ./
             dockerfile: ./docker/Dockerfile
-        command: npm run hmr
+        command: webpack --env.hmr --env.docker
         volumes:
             - .:/usr/app/
             - ./node_modules/:/usr/app/node_modules
