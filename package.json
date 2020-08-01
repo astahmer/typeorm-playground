@@ -6,7 +6,8 @@
     "main": "dist/index.js",
     "scripts": {
         "tsc": "tsc",
-        "start": "node --inspect=0.0.0.0:9230 -r ts-node/register dist/index",
+        "start-docker": "node --inspect=0.0.0.0:9230 -r ts-node/register dist/index",
+        "start": "node --inspect=9231 -r ts-node/register dist/index",
         "dev": "webpack --env.dev",
         "hmr": "webpack --env.hmr",
         "build": "webpack --env.prod",

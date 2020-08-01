@@ -44,7 +44,7 @@ module.exports = (env) => {
         plugins: [new webpack.EnvironmentPlugin({ NODE_ENV: mode }), new CleanWebpackPlugin()].concat(
             withHMR ? [new webpack.HotModuleReplacementPlugin()] : [],
             new WebpackShellPlugin({
-                onBuildEnd: ["npm run start"],
+                onBuildEnd: ["npm run start" + (env.docker ? "-docker" : "")],
             })
         ),
         cache: true,
