@@ -13,7 +13,7 @@ const logger = console;
 /** Creates connection and returns it */
 export async function createConnectionToDatabase() {
     const entities = [Article, Comment, Image, Role, Upvote, User];
-    const envOptions = await getConnectionOptions();
+    const envOptions = await getConnectionOptions().catch(logger.log);
     const useSqlJS = !process.env.HOST; // if host is defined, using docker
     const options = { ...(useSqlJS ? {} : envOptions), ...(getOrmConfig(useSqlJS) as any), entities };
 
